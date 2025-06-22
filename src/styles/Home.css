@@ -1,0 +1,14 @@
+.profile {
+  text-align: center;
+  margin-top: 20px;
+}
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
