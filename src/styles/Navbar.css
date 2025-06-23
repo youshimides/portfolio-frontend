@@ -16,3 +16,36 @@
 .navbar a:hover {
   text-decoration: underline;
 }
+/* Простой и надежный переключатель темы */
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.theme-toggle {
+  background: var(--bg-hover);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.theme-toggle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(15deg);
+}
