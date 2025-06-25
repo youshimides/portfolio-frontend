@@ -1,14 +1,123 @@
-.profile {
+.container {
   text-align: center;
-  margin-top: 20px;
+  padding: 20px;
 }
+
+.profiles-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px; 
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .photo-placeholder {
-  width: 150px;
-  height: 150px;
-  background-color: #ccc;
+  width: 200px; 
+  height: 200px;
+  background-color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
   border-radius: 50%;
+  margin-bottom: 25px; 
+  font-size: 16px;
+  color: #777;
+  
+
+  border: 8px solid #fff; 
+  box-shadow: 
+    0 0 0 4px #e0e0e0, 
+    0 8px 24px rgba(0, 0, 0, 0.2); 
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+.photo-placeholder {
+  border: 8px solid #f8f8f8;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 4px #7a7a7a;
+}
+
+
+.caption {
+  font-size: 22px; 
+  font-weight: 600;
+  color: #222;
+  margin-top: 20px; 
+  position: relative;
+  padding-top: 15px;
+}
+
+
+.caption::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #000000; 
+}
+
+@media (max-width: 1200px) {
+  .profiles-container {
+    gap: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .profiles-container {
+    gap: 50px;
+  }
+  .photo-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profiles-container {
+    flex-direction: column;
+    gap: 80px; 
+    margin-top: 30px;
+  }
+  
+  .photo-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.photo-placeholder:hover img {
+  transform: scale(1.05);
 }
